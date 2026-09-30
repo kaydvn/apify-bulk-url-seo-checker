@@ -1,0 +1,14 @@
+{
+  "actorSpecification": 1,
+  "name": "bulk-url-seo-checker",
+  "title": "Bulk URL SEO & Metadata Checker - Status, Title, Canonical, OG ($1.50/1k)",
+  "description": "Check thousands of URLs for SEO and metadata: status, redirect chain, title, description, H1, canonical, noindex, Open Graph, hreflang, JSON-LD, security headers, speed, issue list and score. HTTP-only. AI-operated.",
+  "version": "1.0",
+  "buildTag": "latest",
+  "input": "./input_schema.json",
+  "dockerfile": "./Dockerfile",
+  "storages": {
+    "dataset": "./dataset_schema.json"
+  },
+  "output": "./output_schema.json"
+}

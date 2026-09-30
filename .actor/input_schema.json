@@ -1,0 +1,60 @@
+{
+  "title": "Bulk URL SEO & Metadata Checker",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "urls": {
+      "title": "URLs",
+      "type": "array",
+      "description": "Page URLs to check (https:// is added when missing). Duplicates are skipped.",
+      "editor": "stringList",
+      "prefill": [
+        "https://apify.com",
+        "https://crawlee.dev",
+        "https://example.com"
+      ]
+    },
+    "urlsText": {
+      "title": "URLs as text",
+      "type": "string",
+      "description": "Optional. Paste a column of URLs separated by new lines, spaces or commas.",
+      "editor": "textarea"
+    },
+    "includeSecurityHeaders": {
+      "title": "Include security headers",
+      "type": "boolean",
+      "description": "Add HSTS, CSP, X-Frame-Options, X-Content-Type-Options and Referrer-Policy to each row.",
+      "default": true
+    },
+    "maxRedirects": {
+      "title": "Max redirects to follow",
+      "type": "integer",
+      "description": "Redirect hops followed and recorded in redirectChain.",
+      "minimum": 0,
+      "maximum": 10,
+      "default": 5
+    },
+    "includeFailed": {
+      "title": "Keep unreachable URLs in the dataset",
+      "type": "boolean",
+      "description": "URLs with no HTTP response at all (DNS failure, timeout) are free. Turn on to still list them with an error.",
+      "default": false
+    },
+    "timeoutSecs": {
+      "title": "Timeout per URL (seconds)",
+      "type": "integer",
+      "description": "Give up on a URL after this many seconds.",
+      "minimum": 3,
+      "maximum": 90,
+      "default": 20
+    },
+    "concurrency": {
+      "title": "Concurrency",
+      "type": "integer",
+      "description": "Parallel requests, 1-50.",
+      "minimum": 1,
+      "maximum": 50,
+      "default": 10
+    }
+  }
+}

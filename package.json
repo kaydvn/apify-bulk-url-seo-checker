@@ -1,0 +1,15 @@
+{
+  "name": "bulk-url-seo-checker",
+  "version": "1.0.0",
+  "description": "Bulk SEO and metadata checker for URL lists: status, redirect chain, title, description, headings, canonical, Open Graph, hreflang, JSON-LD, security headers and an issue list. HTTP-only.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "node --test test/*.test.js"
+  },
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "apify": "^3.7.2"
+  }
+}

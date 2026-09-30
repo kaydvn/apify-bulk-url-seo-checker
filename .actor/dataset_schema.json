@@ -1,0 +1,305 @@
+{
+  "actorSpecification": 1,
+  "fields": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "url": {
+        "type": "string",
+        "description": "Input URL"
+      },
+      "finalUrl": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "URL after redirects"
+      },
+      "status": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "description": "Final HTTP status"
+      },
+      "redirectCount": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "description": "Redirect hops"
+      },
+      "redirectChain": {
+        "type": "array",
+        "description": "Each hop: url and status",
+        "items": {
+          "type": "object"
+        }
+      },
+      "contentType": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Content-Type"
+      },
+      "contentLengthBytes": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "description": "Size in bytes"
+      },
+      "server": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Server header"
+      },
+      "compression": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Content-Encoding"
+      },
+      "ttfbMs": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "description": "Time to first response, ms"
+      },
+      "totalMs": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "description": "Total time, ms"
+      },
+      "xRobotsTag": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "X-Robots-Tag header"
+      },
+      "title": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Page title"
+      },
+      "titleLength": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "description": "Title length"
+      },
+      "metaDescription": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Meta description"
+      },
+      "metaDescriptionLength": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "description": "Meta description length"
+      },
+      "robotsMeta": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Meta robots"
+      },
+      "viewport": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Meta viewport"
+      },
+      "lang": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "html lang"
+      },
+      "canonical": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Canonical URL"
+      },
+      "h1": {
+        "type": "array",
+        "description": "H1 texts",
+        "items": {
+          "type": "string"
+        }
+      },
+      "h2Count": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "description": "Number of H2"
+      },
+      "openGraph": {
+        "type": "object",
+        "description": "og:title, og:description, og:image, og:type"
+      },
+      "twitterCard": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "twitter:card"
+      },
+      "hreflang": {
+        "type": "array",
+        "description": "Alternate language links",
+        "items": {
+          "type": "object"
+        }
+      },
+      "jsonLdTypes": {
+        "type": "array",
+        "description": "schema.org types found in JSON-LD",
+        "items": {
+          "type": "string"
+        }
+      },
+      "hasFavicon": {
+        "type": "boolean",
+        "description": "Icon link present"
+      },
+      "wordCount": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "description": "Visible word count"
+      },
+      "imagesTotal": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "description": "Images"
+      },
+      "imagesMissingAlt": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "description": "Images without alt text"
+      },
+      "internalLinks": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "description": "Internal links"
+      },
+      "externalLinks": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "description": "External links"
+      },
+      "securityHeaders": {
+        "type": "object",
+        "description": "Security headers"
+      },
+      "score": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "description": "0-100 SEO hygiene score"
+      },
+      "issues": {
+        "type": "array",
+        "description": "Issue codes",
+        "items": {
+          "type": "string"
+        }
+      },
+      "error": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Error when no response was received"
+      }
+    },
+    "additionalProperties": true
+  },
+  "views": {
+    "overview": {
+      "title": "Overview",
+      "transformation": {
+        "fields": [
+          "url",
+          "finalUrl",
+          "status",
+          "score",
+          "issues",
+          "title",
+          "metaDescriptionLength",
+          "h1",
+          "canonical",
+          "ttfbMs",
+          "redirectCount"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "url": {
+            "label": "URL"
+          },
+          "status": {
+            "label": "Status"
+          },
+          "score": {
+            "label": "Score"
+          },
+          "issues": {
+            "label": "Issues"
+          },
+          "title": {
+            "label": "Title"
+          },
+          "metaDescriptionLength": {
+            "label": "Desc. length"
+          },
+          "h1": {
+            "label": "H1"
+          },
+          "canonical": {
+            "label": "Canonical"
+          },
+          "ttfbMs": {
+            "label": "TTFB ms"
+          },
+          "redirectCount": {
+            "label": "Redirects"
+          }
+        }
+      }
+    }
+  }
+}
