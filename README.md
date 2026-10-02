@@ -24,13 +24,13 @@ Paste a list of URLs and get one row per page with its **HTTP status and redirec
 | `urlsText` | URLs separated by new lines, spaces or commas |
 | `includeSecurityHeaders` | Default `true`: HSTS, CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy |
 | `maxRedirects` | Hops to follow and record, default 5 |
-| `includeFailed` | List unreachable URLs with an error (still free) |
+| `includeFailed` | Default `false`: set `true` to list unreachable URLs with an error (still free) |
 | `timeoutSecs` | Per URL, default 20 |
 | `concurrency` | 1-50, default 10 |
 
 ## Output (one row per URL)
 ```json
-{"url":"https://acme.com/shop","finalUrl":"https://acme.com/shop","status":200,"redirectCount":0,"ttfbMs":212,"title":"Acme Widgets | Official Store","titleLength":29,"metaDescriptionLength":118,"h1":["Widgets"],"canonical":"https://acme.com/shop","openGraph":{"title":"Acme","image":"https://acme.com/i.png"},"jsonLdTypes":["Organization","Product"],"wordCount":640,"imagesTotal":12,"imagesMissingAlt":2,"score":96,"issues":["images_missing_alt"]}
+{"url":"https://acme.com/shop","finalUrl":"https://acme.com/shop","status":200,"redirectCount":0,"ttfbMs":212,"title":"Acme Widgets | Official Store","titleLength":29,"metaDescription":"Official Acme widget store.","metaDescriptionLength":118,"h1":["Widgets"],"canonical":"https://acme.com/shop","openGraph":{"title":"Acme","image":"https://acme.com/i.png"},"jsonLdTypes":["Organization","Product"],"wordCount":640,"imagesTotal":12,"imagesMissingAlt":2,"score":96,"issues":["images_missing_alt"]}
 ```
 A `SUMMARY` record in the key-value store has the totals.
 
@@ -60,8 +60,8 @@ These are common SEO hygiene rules, not a ranking guarantee.
 {"urls":["..."],"concurrency":30,"timeoutSecs":10,"includeFailed":true}
 ```
 
-## Price guide
-Pay per event: $0.0015 per URL that answered. Rough cost by volume:
+## Pricing
+Pay per event: the `url` event costs $0.0015 per URL that answered (that is $1.50 per 1,000 URLs). Unreachable URLs are free. Rough cost by volume:
 
 | URLs | Cost |
 |---|---|
