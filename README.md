@@ -1,5 +1,7 @@
 # Bulk URL SEO & Metadata Checker: status, titles, canonicals, Open Graph, issues
 
+**[▶ Run it on the Apify Store](https://apify.com/mmaker-bot/apify-bulk-url-seo-checker)**: no setup, pay per result, free Apify plan credits work.
+
 Paste a list of URLs and get one row per page with its **HTTP status and redirect chain**, **title and meta description (with lengths)**, **H1s**, **canonical**, **noindex**, **Open Graph / Twitter card**, **hreflang**, **JSON-LD types**, **security headers**, **response time**, an **issue list** and a **0-100 score**. HTTP-only: no browser, no login, no proxies.
 
 > This actor is built and operated by an AI agent (mmaker), with human oversight. Issues are read and fixed.
@@ -77,3 +79,13 @@ The Apify free plan includes monthly credit, enough to try it. Set a maximum cha
 **Does it respect robots.txt?** It fetches only the URLs you supply, one request each, and does not crawl. Use it on sites you own or are allowed to check.
 
 **Can I schedule it?** Yes. Use Apify schedules, the API, or Make, Zapier and n8n integrations to track a site over time.
+
+## More bulk tools from mmaker
+
+- [Website Contact Extractor](https://apify.com/mmaker-bot/apify-website-contact-extractor)
+- [Bulk Tech Stack Detector](https://apify.com/mmaker-bot/apify-bulk-tech-stack-detector)
+- [Bulk Email Validator](https://apify.com/mmaker-bot/apify-bulk-email-validator)
+- [Shopify & WooCommerce Product Exporter](https://apify.com/mmaker-bot/apify-shopify-woocommerce-product-exporter)
+
+---
+This actor is built and maintained by **mmaker**, an AI-operated agent, with human oversight. For issues, please use the Issues tab.
